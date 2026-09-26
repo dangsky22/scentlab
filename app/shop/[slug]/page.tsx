@@ -47,58 +47,59 @@ export default async function ProductDetailPage({
       </header>
 
       {/* Product Detail */}
-      <section className="py-20 px-4">
+      <section className="py-12 md:py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
             {/* Image */}
-            <div className="relative h-[600px] bg-[#141414] border border-[#C9A24B]/20">
+            <div className="relative h-80 md:h-[500px] lg:h-[600px] bg-[#141414] border border-[#C9A24B]/20">
               <Image
                 src={product.image}
                 alt={product.name}
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
 
             {/* Product Info */}
             <div className="flex flex-col justify-center">
-              <h1 className="font-[family-name:var(--font-playfair)] text-5xl text-[#F5F1E8] mb-4">
+              <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl text-[#F5F1E8] mb-4">
                 {product.name}
               </h1>
-              <p className="text-[#C9A24B] text-lg mb-6 tracking-wide">
+              <p className="text-[#C9A24B] text-base md:text-lg mb-6 tracking-wide">
                 {product.character}
               </p>
-              <p className="text-2xl text-[#F5F1E8] font-semibold mb-8">
+              <p className="text-xl md:text-2xl text-[#F5F1E8] font-semibold mb-8">
                 Rp {product.price.toLocaleString('id-ID')}
               </p>
 
               <div className="mb-8">
                 <h3 className="text-[#F5F1E8] font-semibold mb-2">Deskripsi</h3>
-                <p className="text-[#B8B2A7] leading-relaxed">
+                <p className="text-[#B8B2A7] text-sm md:text-base leading-relaxed">
                   {product.description}
                 </p>
               </div>
 
               <div className="mb-8">
                 <h3 className="text-[#F5F1E8] font-semibold mb-3">Fragrance Notes</h3>
-                <div className="space-y-3">
+                <div className="space-y-3 text-sm md:text-base">
                   <div className="flex">
-                    <span className="text-[#C9A24B] w-24 flex-shrink-0">Top:</span>
+                    <span className="text-[#C9A24B] w-20 md:w-24 flex-shrink-0">Top:</span>
                     <span className="text-[#B8B2A7]">{product.notes.top}</span>
                   </div>
                   <div className="flex">
-                    <span className="text-[#C9A24B] w-24 flex-shrink-0">Middle:</span>
+                    <span className="text-[#C9A24B] w-20 md:w-24 flex-shrink-0">Middle:</span>
                     <span className="text-[#B8B2A7]">{product.notes.middle}</span>
                   </div>
                   <div className="flex">
-                    <span className="text-[#C9A24B] w-24 flex-shrink-0">Base:</span>
+                    <span className="text-[#C9A24B] w-20 md:w-24 flex-shrink-0">Base:</span>
                     <span className="text-[#B8B2A7]">{product.notes.base}</span>
                   </div>
                 </div>
               </div>
 
               <div className="mb-8">
-                <div className="flex items-center">
+                <div className="flex items-center text-sm md:text-base">
                   <span className="text-[#C9A24B] font-semibold mr-3">Longevity:</span>
                   <span className="text-[#B8B2A7]">{product.longevity}</span>
                 </div>
@@ -124,11 +125,11 @@ export default async function ProductDetailPage({
           </div>
 
           {/* Related Products */}
-          <div className="mt-20">
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl text-[#F5F1E8] mb-8 text-center">
+          <div className="mt-12 md:mt-20">
+            <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl text-[#F5F1E8] mb-8 text-center">
               Produk Lainnya
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {products
                 .filter((p) => p.id !== product.id)
                 .map((relatedProduct) => (
@@ -138,22 +139,23 @@ export default async function ProductDetailPage({
                     className="group"
                   >
                     <div className="bg-[#141414] border border-[#C9A24B]/20 overflow-hidden transition-all duration-300 hover:border-[#C9A24B] hover:shadow-lg hover:shadow-[#C9A24B]/10">
-                      <div className="relative h-80 overflow-hidden">
+                      <div className="relative h-64 md:h-80 overflow-hidden">
                         <Image
                           src={relatedProduct.image}
                           alt={relatedProduct.name}
                           fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       </div>
-                      <div className="p-6">
-                        <h3 className="font-[family-name:var(--font-playfair)] text-xl text-[#F5F1E8] mb-2">
+                      <div className="p-4 md:p-6">
+                        <h3 className="font-[family-name:var(--font-playfair)] text-lg md:text-xl text-[#F5F1E8] mb-2">
                           {relatedProduct.name}
                         </h3>
-                        <p className="text-[#C9A24B] text-sm mb-3">
+                        <p className="text-[#C9A24B] text-xs md:text-sm mb-3">
                           {relatedProduct.character}
                         </p>
-                        <span className="text-[#F5F1E8] font-semibold">
+                        <span className="text-[#F5F1E8] font-semibold text-base md:text-lg">
                           Rp {relatedProduct.price.toLocaleString('id-ID')}
                         </span>
                       </div>

@@ -26,19 +26,19 @@ export default function ShopPage() {
       </header>
 
       {/* Shop Content */}
-      <section className="py-20 px-4">
+      <section className="py-12 md:py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="font-[family-name:var(--font-playfair)] text-5xl md:text-6xl text-[#F5F1E8] mb-4">
+          <div className="text-center mb-12 md:mb-16">
+            <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-5xl lg:text-6xl text-[#F5F1E8] mb-4">
               Koleksi Parfum
             </h1>
             <div className="w-24 h-px bg-[#C9A24B] mx-auto mb-6"></div>
-            <p className="text-[#B8B2A7] text-lg">
+            <p className="text-[#B8B2A7] text-base md:text-lg px-4">
               Temukan aroma yang mencerminkan kepribadian Anda
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {products.map((product) => (
               <Link 
                 key={product.id} 
@@ -46,29 +46,30 @@ export default function ShopPage() {
                 className="group"
               >
                 <div className="bg-[#141414] border border-[#C9A24B]/20 overflow-hidden transition-all duration-300 hover:border-[#C9A24B] hover:shadow-lg hover:shadow-[#C9A24B]/10">
-                  <div className="relative h-96 overflow-hidden">
+                  <div className="relative h-64 md:h-80 lg:h-96 overflow-hidden">
                     <Image
                       src={product.image}
                       alt={product.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="font-[family-name:var(--font-playfair)] text-2xl text-[#F5F1E8] mb-2">
+                  <div className="p-4 md:p-6">
+                    <h3 className="font-[family-name:var(--font-playfair)] text-xl md:text-2xl text-[#F5F1E8] mb-2">
                       {product.name}
                     </h3>
-                    <p className="text-[#C9A24B] text-sm mb-3 tracking-wide">
+                    <p className="text-[#C9A24B] text-xs md:text-sm mb-2 md:mb-3 tracking-wide">
                       {product.character}
                     </p>
-                    <p className="text-[#B8B2A7] text-sm mb-4">
+                    <p className="text-[#B8B2A7] text-xs md:text-sm mb-3 md:mb-4 line-clamp-2">
                       {product.description}
                     </p>
                     <div className="flex items-center justify-between">
-                      <span className="text-[#F5F1E8] font-semibold text-lg">
+                      <span className="text-[#F5F1E8] font-semibold text-base md:text-lg">
                         Rp {product.price.toLocaleString('id-ID')}
                       </span>
-                      <span className="text-[#C9A24B] text-sm group-hover:underline">
+                      <span className="text-[#C9A24B] text-xs md:text-sm group-hover:underline">
                         Lihat Detail →
                       </span>
                     </div>

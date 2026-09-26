@@ -20,13 +20,13 @@ export default function Home() {
       </section>
 
       {/* Brand Story */}
-      <section className="py-20 px-4 max-w-4xl mx-auto">
+      <section className="py-12 md:py-20 px-4 max-w-4xl mx-auto">
         <div className="text-center">
-          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl text-[#F5F1E8] mb-6">
+          <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl lg:text-5xl text-[#F5F1E8] mb-6">
             Cerita Kami
           </h2>
           <div className="w-24 h-px bg-[#C9A24B] mx-auto mb-8"></div>
-          <p className="text-[#B8B2A7] text-lg leading-relaxed">
+          <p className="text-[#B8B2A7] text-base md:text-lg leading-relaxed px-4">
             Scentlaab adalah brand parfum premium yang lahir dari keinginan untuk menghadirkan wewangian berkualitas tinggi dengan karakter unik. 
             Kami percaya bahwa setiap orang memiliki aroma yang mencerminkan kepribadian mereka. 
             Dengan tiga varian unggulan, kami mengajak Anda menemukan identitas melalui keharuman yang tak terlupakan.
@@ -35,16 +35,16 @@ export default function Home() {
       </section>
 
       {/* Products Section */}
-      <section className="py-20 px-4 bg-[#141414]">
+      <section className="py-12 md:py-20 px-4 bg-[#141414]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl text-[#F5F1E8] mb-4">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-4xl lg:text-5xl text-[#F5F1E8] mb-4 px-4">
               Tiga Aroma, Tiga Karakter, Satu Identitas
             </h2>
             <div className="w-24 h-px bg-[#C9A24B] mx-auto"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {products.map((product) => (
               <Link 
                 key={product.id} 
@@ -52,29 +52,30 @@ export default function Home() {
                 className="group"
               >
                 <div className="bg-[#0B0B0C] border border-[#C9A24B]/20 overflow-hidden transition-all duration-300 hover:border-[#C9A24B] hover:shadow-lg hover:shadow-[#C9A24B]/10">
-                  <div className="relative h-96 overflow-hidden">
+                  <div className="relative h-64 md:h-80 lg:h-96 overflow-hidden">
                     <Image
                       src={product.image}
                       alt={product.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="font-[family-name:var(--font-playfair)] text-2xl text-[#F5F1E8] mb-2">
+                  <div className="p-4 md:p-6">
+                    <h3 className="font-[family-name:var(--font-playfair)] text-xl md:text-2xl text-[#F5F1E8] mb-2">
                       {product.name}
                     </h3>
-                    <p className="text-[#C9A24B] text-sm mb-3 tracking-wide">
+                    <p className="text-[#C9A24B] text-xs md:text-sm mb-2 md:mb-3 tracking-wide">
                       {product.character}
                     </p>
-                    <p className="text-[#B8B2A7] text-sm mb-4 line-clamp-2">
+                    <p className="text-[#B8B2A7] text-xs md:text-sm mb-3 md:mb-4 line-clamp-2">
                       {product.description}
                     </p>
                     <div className="flex items-center justify-between">
-                      <span className="text-[#F5F1E8] font-semibold">
+                      <span className="text-[#F5F1E8] font-semibold text-base md:text-lg">
                         Rp {product.price.toLocaleString('id-ID')}
                       </span>
-                      <span className="text-[#C9A24B] text-sm group-hover:underline">
+                      <span className="text-[#C9A24B] text-xs md:text-sm group-hover:underline">
                         Lihat Detail
                       </span>
                     </div>
