@@ -6,14 +6,15 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#0B0B0C]">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <section className="relative h-auto md:h-screen flex items-center justify-center overflow-hidden">
+        <div className="w-full md:absolute md:inset-0 z-0">
           <Image
             src="/images/hero.png"
             alt="Scentlaab Perfumes"
-            fill
+            width={1920}
+            height={1080}
             sizes="100vw"
-            className="object-cover"
+            className="w-full h-auto md:h-full md:object-cover"
             priority
           />
         </div>
