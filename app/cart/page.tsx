@@ -13,7 +13,7 @@ export default function CartPage() {
 
   function orderViaWhatsApp() {
     const message = `Halo Scentlaab, saya ingin memesan ${quantity}x ${product.name} dengan total Rp ${total.toLocaleString("id-ID")}.`;
-    window.open(`https://wa.me/6288175225580?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/628817522580?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
     setSubmitted(true);
   }
 

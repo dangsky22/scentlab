@@ -22,7 +22,7 @@ export default async function ProductDetailPage({
   }
 
   const whatsappMessage = `Halo, saya tertarik dengan ${product.name} (Rp ${product.price.toLocaleString('id-ID')}). Bisa info lebih lanjut?`;
-  const whatsappUrl = `https://wa.me/6288175225580?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = `https://wa.me/628817522580?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <div className="min-h-screen bg-[#0B0B0C]">

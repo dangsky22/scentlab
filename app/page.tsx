@@ -129,7 +129,7 @@ export default function Home() {
               </h3>
               <div className="space-y-4">
                 <a 
-                  href="https://wa.me/6288175225580"
+                  href="https://wa.me/628817522580"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-[#B8B2A7] hover:text-[#C9A24B] transition-colors"
