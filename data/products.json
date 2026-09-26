@@ -1,0 +1,50 @@
+[
+  {
+    "id": "floral-blossom",
+    "name": "Floral Blossom",
+    "slug": "floral-blossom",
+    "price": 350000,
+    "image": "/images/floral-blossom.png",
+    "category": "feminine",
+    "description": "Aroma feminin dan romantis yang memancarkan kelembutan dan keanggunan. Sempurna untuk Anda yang ingin meninggalkan kesan manis dan memikat.",
+    "character": "Feminin, Romantis, Elegan",
+    "longevity": "6-8 jam",
+    "notes": {
+      "top": "Bergamot, Pear, Pink Pepper",
+      "middle": "Rose, Jasmine, Peony",
+      "base": "Musk, Vanilla, Sandalwood"
+    }
+  },
+  {
+    "id": "royal-oud",
+    "name": "Royal Oud",
+    "slug": "royal-oud",
+    "price": 450000,
+    "image": "/images/royal-oud.png",
+    "category": "luxury",
+    "description": "Wewangian mewah dengan sentuhan oud yang khas. Tahan hingga 12 jam, cocok untuk mereka yang mencari kesan eksklusif dan berkarakter kuat.",
+    "character": "Mewah, Eksklusif, Powerful",
+    "longevity": "10-12 jam",
+    "notes": {
+      "top": "Saffron, Cardamom, Cinnamon",
+      "middle": "Oud, Rose, Patchouli",
+      "base": "Amber, Leather, Musk"
+    }
+  },
+  {
+    "id": "green-vetiver",
+    "name": "Green Vetiver",
+    "slug": "green-vetiver",
+    "price": 380000,
+    "image": "/images/green-vetiver.png",
+    "category": "unisex",
+    "description": "Aroma unisex yang segar dan earthy. Terinspirasi dari iklim tropis Indonesia, sempurna untuk pemakaian sehari-hari yang tetap berkesan.",
+    "character": "Fresh, Earthy, Unisex",
+    "longevity": "7-9 jam",
+    "notes": {
+      "top": "Lemon, Ginger, Green Tea",
+      "middle": "Vetiver, Geranium, Lavender",
+      "base": "Cedarwood, Oakmoss, Tonka Bean"
+    }
+  }
+]
